@@ -4,7 +4,6 @@ import (
 	"github.com/kataras/iris"
 )
 
-
 func (s *TypeServer) Routing() {
 
 	s.App.Get("/welcome", func(ctx iris.Context) {
