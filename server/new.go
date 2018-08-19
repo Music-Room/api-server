@@ -7,15 +7,17 @@ import (
 )
 
 type TypeServer struct {
-	PSQL  *psql.TypePSQL
-	Redis *rds.TypeRedis
-	App   *iris.Application
+	PSQL      *psql.TypePSQL
+	Redis     *rds.TypeRedis
+	App       *iris.Application
+	Providers *ProviderIndex
 }
 
 func New() *TypeServer {
 	return &TypeServer{
-		PSQL:  psql.New(),
-		Redis: rds.New(),
-		App:   iris.New(),
+		PSQL:      psql.New(),
+		Redis:     rds.New(),
+		App:       iris.New(),
+		Providers: NewProviders(),
 	}
 }
